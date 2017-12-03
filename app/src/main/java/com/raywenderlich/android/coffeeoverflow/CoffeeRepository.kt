@@ -4,6 +4,9 @@ class CoffeeRepository {
   private var coffees = 0
 
   fun increment() {
-    coffees ++
+    coffees++
   }
+
+  val count: Int
+    get() = coffees
 }

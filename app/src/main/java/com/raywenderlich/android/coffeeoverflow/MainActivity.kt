@@ -12,9 +12,16 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+    showCount()
+
     addCoffee.setOnClickListener {
       coffeeRepo.increment()
+      showCount()
     }
+  }
+
+  private fun showCount() {
+    amountConsumed.text = getString(R.string.consumed_format, coffeeRepo.count, coffeeLimitValue.text.toString())
   }
 }
 
