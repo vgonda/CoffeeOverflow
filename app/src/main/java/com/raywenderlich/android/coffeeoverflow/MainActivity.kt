@@ -17,11 +17,16 @@ class MainActivity : AppCompatActivity() {
     addCoffee.setOnClickListener {
       coffeeRepo.increment()
       showCount()
+
+      amountConsumed.announceForAccessibility(getString(R.string.count_updated, consumedString()))
     }
   }
 
   private fun showCount() {
-    amountConsumed.text = getString(R.string.consumed_format, coffeeRepo.count, coffeeLimitValue.text.toString())
+    amountConsumed.text = consumedString()
   }
+
+  private fun consumedString() =
+      getString(R.string.consumed_format, coffeeRepo.count, coffeeLimitValue.text.toString())
 }
 
