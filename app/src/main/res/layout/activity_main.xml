@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_padding"
-    tools:context="com.raywenderlich.android.coffeeoverflow.MainActivity">
+    android:padding="@dimen/activity_padding">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/coffeeLimitLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/coffeeLimitValue"
+            android:text="@string/coffee_limit_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/coffeeLimitValue"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/coffeeLimitValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/coffee_limit_input_hint"
+            android:inputType="number"
+            android:text="@string/default_coffee_limit"
+            app:layout_constraintLeft_toRightOf="@id/coffeeLimitLabel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addCoffee"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/editText"
-        android:text="@string/coffee_limit_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/editText"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/coffee_limit_input_hint"
-        android:inputType="number"
-        android:text="@string/default_coffee_limit"
-        app:layout_constraintLeft_toRightOf="@id/textView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:accessibilityTraversalBefore="@+id/mainContent"
+        android:clickable="true"
+        android:contentDescription="@string/add_coffee"
+        android:focusable="true"
+        android:src="@android:drawable/ic_menu_add"
+        app:fabSize="normal"
+        app:layout_anchor="@id/mainContent"
+        app:layout_anchorGravity="bottom|right|end"
+        tools:targetApi="lollipop_mr1" />
+</android.support.design.widget.CoordinatorLayout>
