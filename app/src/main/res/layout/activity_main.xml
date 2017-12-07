@@ -84,7 +84,7 @@
         android:clickable="true"
         android:contentDescription="@string/add_coffee"
         android:focusable="true"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@drawable/ic_add_24px"
         app:fabSize="normal"
         app:layout_anchor="@id/mainContent"
         app:layout_anchorGravity="bottom|right|end"
