@@ -19,8 +19,6 @@
         android:id="@+id/consumedContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="false"
         android:orientation="horizontal">
 
       <TextView
@@ -52,7 +50,6 @@
           android:layout_height="wrap_content"
           android:layout_gravity="start|center_vertical"
           android:layout_weight="1"
-          android:labelFor="@id/coffeeLimitValue"
           android:text="@string/coffee_limit_label"
           android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
@@ -71,7 +68,6 @@
           android:layout_weight="1"
           android:hint="@string/coffee_limit_input_hint"
           android:inputType="number"
-          android:minHeight="48dp"
           android:text="@string/default_coffee_limit"
           android:textAlignment="textEnd"/>
     </LinearLayout>
@@ -105,9 +101,7 @@
       android:id="@+id/addCoffee"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:accessibilityTraversalBefore="@+id/consumedContainer"
       android:clickable="true"
-      android:contentDescription="@string/add_coffee"
       android:focusable="true"
       android:src="@drawable/ic_add_24px"
       app:fabSize="normal"

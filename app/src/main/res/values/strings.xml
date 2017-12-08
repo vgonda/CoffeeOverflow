@@ -5,6 +5,4 @@
     <string name="coffee_limit_input_hint">Limit</string>
     <string name="amount_consumed">Amount Consumed</string>
     <string name="consumed_format">%1$d of %2$s</string>
-    <string name="add_coffee">Add Coffee</string>
-    <string name="count_updated">Count updated %s</string>
 </resources>
