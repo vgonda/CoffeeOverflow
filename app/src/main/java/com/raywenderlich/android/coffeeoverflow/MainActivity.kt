@@ -34,9 +34,16 @@ class MainActivity : AppCompatActivity() {
 
   private fun showCount() {
     amountConsumed.text = consumedString()
+    coffeeProgress.max = limit().toInt()
+    coffeeProgress.progress = coffeeRepo.count
   }
 
   private fun consumedString() =
-      getString(R.string.consumed_format, coffeeRepo.count, coffeeLimitValue.text.toString())
+      getString(R.string.consumed_format, coffeeRepo.count, limit())
+
+  private fun limit(): String {
+    val limitString = coffeeLimitValue.text.toString()
+    return if (limitString.isNotEmpty()) limitString else "0"
+  }
 }
 
